@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     {
-                        docker.build('proyectojenkins:v1', '--build-arg .')
+                        docker.build('proyectojenkins:v1', '--build-arg MONGODB_URI=${MONGODB_URI} .')
                     }
                 }
             }

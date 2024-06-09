@@ -3,9 +3,8 @@ services :
   proyectojenkins : 
     container_name : proyectojenkins
     image : proyectojenkins:v1
-    environment:
-      - MONGODB_URI=${MONGODB_URI}
-      - PORT=4002    
+    env_file:
+      - .env
     build :
       context : .
     ports : 
@@ -17,9 +16,8 @@ services :
   proyectojenkins2 : 
     container_name : proyectojenkins2
     image : proyectojenkins:v1
-    environment:
-      - MONGODB_URI=${MONGODB_URI}
-      - PORT=4002    
+    env_file:
+      - .env  
     ports : 
       - "4003"
     networks : 
@@ -29,9 +27,8 @@ services :
   balanceado : 
     container_name : balanceado
     image : balanceado:v1
-    environment:
-      - MONGODB_URI=${MONGODB_URI}
-      - PORT=4002     
+    env_file:
+      - .env
     build :
       context : ./balanceador
     ports : 

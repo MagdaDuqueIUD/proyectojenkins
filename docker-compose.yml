@@ -1,8 +1,8 @@
 version : "3.9"
 services :
-  proyectos-balanceo : 
-    container_name : proyectos-balanceo
-    image : proyectos-balanceo:v1
+  proyectojenkins : 
+    container_name : proyectojenkins
+    image : proyectojenkins:v1
     environment:
       - MONGODB_URI=${MONGODB_URI}
       - PORT=4002    
@@ -14,9 +14,9 @@ services :
       - proyectos-app
 
 
-  proyectos-balanceo2 : 
-    container_name : proyectos-balanceo2
-    image : proyectos-balanceo:v1
+  proyectojenkins2 : 
+    container_name : proyectojenkins2
+    image : proyectojenkins:v1
     environment:
       - MONGODB_URI=${MONGODB_URI}
       - PORT=4002    

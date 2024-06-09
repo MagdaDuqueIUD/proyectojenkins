@@ -13,7 +13,7 @@ pipeline {
                     withCredentials([
                         string(credentialsId: 'MONGODB_URI', variable: 'MONGODB_URI')
                     ]) {
-                        docker.build('proyectos-balanceo:v1', '--build-arg MONGODB_URI=${MONGODB_URI} .')
+                        docker.build('proyectojenkins:v1', '--build-arg MONGODB_URI=${MONGODB_URI} .')
                     }
                 }
             }
